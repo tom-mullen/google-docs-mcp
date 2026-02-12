@@ -258,9 +258,9 @@ describe('Table Cell Range Finding', () => {
         [{ content: [{ startIndex: 16, endIndex: 20, paragraph: { elements: [] } }] }],
       ]);
 
-      await expect(
-        getTableCellRange(mockDocs as any, 'doc123', 999, 0, 0)
-      ).rejects.toThrow('No table found at startIndex 999');
+      await expect(getTableCellRange(mockDocs as any, 'doc123', 999, 0, 0)).rejects.toThrow(
+        'No table found at startIndex 999'
+      );
     });
 
     it('should throw UserError if row index is out of range', async () => {
@@ -268,9 +268,9 @@ describe('Table Cell Range Finding', () => {
         [{ content: [{ startIndex: 16, endIndex: 20, paragraph: { elements: [] } }] }],
       ]);
 
-      await expect(
-        getTableCellRange(mockDocs as any, 'doc123', 14, 5, 0)
-      ).rejects.toThrow('Row index 5 is out of range');
+      await expect(getTableCellRange(mockDocs as any, 'doc123', 14, 5, 0)).rejects.toThrow(
+        'Row index 5 is out of range'
+      );
     });
 
     it('should throw UserError if column index is out of range', async () => {
@@ -278,9 +278,9 @@ describe('Table Cell Range Finding', () => {
         [{ content: [{ startIndex: 16, endIndex: 20, paragraph: { elements: [] } }] }],
       ]);
 
-      await expect(
-        getTableCellRange(mockDocs as any, 'doc123', 14, 0, 5)
-      ).rejects.toThrow('Column index 5 is out of range');
+      await expect(getTableCellRange(mockDocs as any, 'doc123', 14, 0, 5)).rejects.toThrow(
+        'Column index 5 is out of range'
+      );
     });
 
     it('should handle cell with multiple paragraphs', async () => {
